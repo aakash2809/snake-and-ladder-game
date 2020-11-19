@@ -25,31 +25,41 @@ public class SnakeAndLadderGame {
 
 		System.out.println("        welcome to Snake and Ladder Game     ");
 		System.out.println("---------------------------------------------");
-		System.out.println("dice is rolling....");
-		int diceRollResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-		System.out.println("dice rolling result is- " + diceRollResult);
-		int option = (int) (Math.floor(Math.random() * 10) % 3);
 
-		// SNAKE LADDER EVALUTION
-		switch (option) {
-		case 0:
-			currentPosition = playerPosition;
-			System.out.println("no play");
-			System.out.println("updated player positon- " + currentPosition);
-			break;
-		case 1:
-			currentPosition = ladder(diceRollResult);
-			System.out.println("found ladder");
-			System.out.println("updated player positon- " + currentPosition);
-			break;
-		case 2:
-			currentPosition = snake(diceRollResult);
-			System.out.println("found snake ");
-			System.out.println("updated player positon- " + currentPosition);
-			break;
+		// ITERATION TILL 100
+		while (playerPosition <= 100) {
 
-		default:
+			System.out.println("dice is rolling....");
+			int diceRollResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+			System.out.println("dice rolling result is- " + diceRollResult);
+			int option = (int) (Math.floor(Math.random() * 10) % 3);
 
+			// SNAKE LADDER EVALUTION
+			switch (option) {
+			case 0:
+				currentPosition = playerPosition;
+				System.out.println("no play");
+				System.out.println("updated player positon : " + currentPosition);
+				break;
+			case 1:
+				currentPosition = ladder(diceRollResult);
+				System.out.println("found ladder");
+				System.out.println("updated player positon : " + currentPosition);
+				break;
+			case 2:
+				currentPosition = snake(diceRollResult);
+				System.out.println("found snake ");
+				System.out.println("updated player positon : " + currentPosition);
+				break;
+
+			default:
+
+			}
+
+			// CHECKING WHETHER POSITION IS LESS THAN 0
+			if (playerPosition < 0) {
+				playerPosition = 0;
+			}
 		}
 
 	}
