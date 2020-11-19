@@ -3,6 +3,8 @@ package com.SnakeAndLadderGame;
 /*HERE GAME IS INITIATED FOR SINGLE PLAYER */
 
 public class SnakeAndLadderGame {
+	
+	int playerPosition=0;
 
 	public static void main(String[] args) {
 
