@@ -76,8 +76,8 @@ public class SnakeAndLadderGame {
 
 		System.out.println("-----------------------------------------------------------");
 		System.out.println();
-		System.out.println(" Have won the game ");
-		System.out.println("the number of rolls of dice taken to win " + numberOfRolls);
+		System.out.println("Player have won the game ");
+		System.out.println("Number of dice rolls taken to win " + numberOfRolls);
 
 	}
 
