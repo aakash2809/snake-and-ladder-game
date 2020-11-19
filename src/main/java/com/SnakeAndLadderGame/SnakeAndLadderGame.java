@@ -22,16 +22,19 @@ public class SnakeAndLadderGame {
 	// MAIN METHOD
 	public static void main(String[] args) {
 		int currentPosition = 0;
+		int previousPosition = 0;
 
 		System.out.println("        welcome to Snake and Ladder Game     ");
 		System.out.println("---------------------------------------------");
 
 		// ITERATION TILL 100
-		while (playerPosition <= 100) {
+		while (playerPosition != 100) {
+
+			previousPosition = playerPosition;
 
 			System.out.println("dice is rolling....");
 			int diceRollResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-			System.out.println("dice rolling result is- " + diceRollResult);
+			System.out.println("dice rolling result is " + diceRollResult);
 			int option = (int) (Math.floor(Math.random() * 10) % 3);
 
 			// SNAKE LADDER EVALUTION
@@ -50,7 +53,6 @@ public class SnakeAndLadderGame {
 				currentPosition = snake(diceRollResult);
 				System.out.println("found snake ");
 				System.out.println("updated player positon : " + currentPosition);
-				break;
 
 			default:
 
@@ -60,7 +62,16 @@ public class SnakeAndLadderGame {
 			if (playerPosition < 0) {
 				playerPosition = 0;
 			}
+			
+			// CHECKING WHETHER POSITION IS GREATER THAN 100
+			if (playerPosition > 100) {
+				playerPosition = previousPosition;
+			}
+
 		}
+
+		
+		System.out.println("player position after iteration is - " + playerPosition);
 
 	}
 
