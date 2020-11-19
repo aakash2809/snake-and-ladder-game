@@ -1,11 +1,14 @@
 package com.SnakeAndLadderGame;
 
-/*HERE GAME IS INITIATED FOR SINGLE PLAYER */
+/*HERE SNAKE LADER GAME IS FOR SINGLE PLAYER */
 
 public class SnakeAndLadderGame {
 
 	// DECLARATION AND INITIALIZATION PLAYER POSITION
 	static int playerPosition = 0;
+	final static int WIN_POSITION = 100;
+	final static int START_POSITION = 0;
+	static int numberOfRolls = 0;
 
 	// LADDER METHOD
 	public static int ladder(int diceRollResult) {
@@ -28,7 +31,7 @@ public class SnakeAndLadderGame {
 		System.out.println("---------------------------------------------");
 
 		// ITERATION TILL 100
-		while (playerPosition != 100) {
+		while (playerPosition != WIN_POSITION) {
 
 			previousPosition = playerPosition;
 
@@ -59,19 +62,22 @@ public class SnakeAndLadderGame {
 			}
 
 			// CHECKING WHETHER POSITION IS LESS THAN 0
-			if (playerPosition < 0) {
-				playerPosition = 0;
+			if (playerPosition < START_POSITION) {
+				playerPosition = START_POSITION;
 			}
-			
+
 			// CHECKING WHETHER POSITION IS GREATER THAN 100
-			if (playerPosition > 100) {
+			if (playerPosition > WIN_POSITION) {
 				playerPosition = previousPosition;
 			}
 
+			numberOfRolls++;
 		}
 
-		
-		System.out.println("player position after iteration is - " + playerPosition);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println();
+		System.out.println(" Have won the game ");
+		System.out.println("the number of rolls of dice taken to win " + numberOfRolls);
 
 	}
 
