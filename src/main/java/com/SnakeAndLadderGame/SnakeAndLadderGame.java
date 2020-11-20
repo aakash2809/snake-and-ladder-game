@@ -1,14 +1,14 @@
 package com.SnakeAndLadderGame;
 
-/*HERE SNAKE LADER GAME IS FOR TWO PLAYERS AND CAN BE PERFORM FOR MULTIPLAYER */
+/*HERE SNAKE LADER GAME IS FOR TWO PLAYERS AND CAN BE PERFORM FOR MULTI PLAYERS WITH SOME MODIFICATION */
 
 public class SnakeAndLadderGame {
 
 	static int numberOfRolls = 0;
-	
+
 	// MAIN METHOD
 	public static void main(String[] args) {
-		
+
 		int diceRollResult = 0;
 		int playerMove = 1;
 		Player player1 = new Player(0, "player1");
@@ -17,8 +17,6 @@ public class SnakeAndLadderGame {
 
 		System.out.println("        welcome to Snake and Ladder Game     ");
 		System.out.println("---------------------------------------------");
-
-		
 
 		// ITERATION TILL WIN POSITION
 		while (player1.playerPosition != player1.WIN_POSITION && player2.playerPosition != player2.WIN_POSITION) {
@@ -62,7 +60,9 @@ public class SnakeAndLadderGame {
 
 		System.out.println("-----------------------------------------------------------");
 		System.out.println();
-		if (player1.playerPosition == 100) {
+
+		// CHECKING WHO WON THE GAME
+		if (player1.playerPosition == player1.WIN_POSITION ) {
 			System.out.println("Player1 won the game ");
 		} else {
 			System.out.println("Player2 won the game ");
